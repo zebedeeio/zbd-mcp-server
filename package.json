@@ -1,0 +1,33 @@
+{
+	"name": "zbd-mcp-server",
+	"type": "module",
+	"version": "1.0.0",
+	"description": "MCP server for ZBD Payment Service Provider",
+	"license": "MIT",
+	"author": {
+		"name": "ZBD",
+		"email": "andre@zbd.gg",
+		"url": "https://zbd.dev"
+	},
+	"dependencies": {
+		"@modelcontextprotocol/sdk": "^1.4.0",
+		"zod": "^3.24.1"
+	},
+	"devDependencies": {
+		"@types/node": "^22.10.0",
+		"@vitest/coverage-v8": "^3.0.7",
+		"onchange": "^7.1.0",
+		"typescript": "^5.7.3",
+		"vite-tsconfig-paths": "^5.1.4",
+		"vitest": "^3.0.7"
+	},
+	"scripts": {
+		"build": "pnpm build:zbd",
+		"build:zbd": "mkdir -p bin && bun build src/zbd.ts --compile --minify --sourcemap --outfile bin/mcp-zbd",
+		"watch:zbd": "onchange 'src/zbd.ts' -- pnpm build:zbd",
+		"watch:all": "onchange 'src/*.ts' -- pnpm build:all",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"test:coverage": "vitest run --coverage"
+	}
+}
