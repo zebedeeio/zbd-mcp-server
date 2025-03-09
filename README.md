@@ -1,6 +1,4 @@
-# MCP Tools
-
-This is a modular toolkit for creating MCP (Model Context Protocol) tools. Each tool is a standalone executable that can be used independently.
+# ZBD MCP Server
 
 https://github.com/modelcontextprotocol/typescript-sdk
 
@@ -61,9 +59,7 @@ This project demonstrates a modular approach to building MCP tools:
 
 ### Available Tools
 
-1. **Hello** (`src/index.ts`): A simple greeting tool
-2. **Weather** (`src/weather.ts`): Get weather alerts for a state
-3. **Blog** (`src/blog.ts`): Tools for blog post creation and frontmatter generation
+1. **ZBD** (`src/zbd.ts`): ZBD API for Bitcoin Lightning
 
 ## Creating Your Own Tool
 
@@ -88,17 +84,13 @@ To create a new tool:
 pnpm build
 
 # Build a specific tool
-pnpm build:hello
-pnpm build:weather
-pnpm build:blog
+pnpm build:zbd
 ```
 
 The resulting executables will be in the `bin` directory and can be run directly:
 
 ```bash
-./bin/mcp-hello
-./bin/mcp-weather
-./bin/mcp-blog
+./bin/mcp-zbd
 ```
 
 ## Cursor Notes
@@ -106,9 +98,7 @@ The resulting executables will be in the `bin` directory and can be run directly
 When using these tools with Cursor, always use the full path to the executable:
 
 ```
-/path/to/your/project/bin/mcp-hello
-/path/to/your/project/bin/mcp-weather
-/path/to/your/project/bin/mcp-blog
+/path/to/your/project/bin/mcp-zbd
 ```
 
 Alternatively, you can run the TypeScript files directly with Node:
@@ -129,4 +119,3 @@ pnpm test:watch
 # Run tests with coverage
 pnpm test:coverage
 ```
-
