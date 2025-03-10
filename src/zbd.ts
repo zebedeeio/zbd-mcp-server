@@ -24,7 +24,7 @@ async function zbdRequest(endpoint: string, options: {
       method: options.method,
       headers: {
         "Content-Type": "application/json",
-        "apikey": process.env.ZBD_API_KEY || "rHaRs3RASe1utLGzGhnGXE7M9lQhaiVP"
+        "apikey": process.env.ZBD_API_KEY || "1J4kYlF7XtvpSZTMVY4Tbk8vjcJ6EOsp"
       },
       ...(options.body && { body: JSON.stringify(options.body) })
     });

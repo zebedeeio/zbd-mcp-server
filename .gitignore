@@ -137,3 +137,6 @@ dist
 
 # Compiled binaries
 /bin/
+
+# Bun build files
+.*.bun-build

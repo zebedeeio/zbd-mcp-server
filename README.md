@@ -60,6 +60,11 @@ bun --version
 pnpm install
 ```
 
+## Troubleshooting
+
+- Use `ps aux | grep mcp-zbd | grep -v grep` to list all running ZBD MCP Server instances.
+- Use `pkill -f mcp-zbd` to kill any duplicate ZBD MCP Server instances that may linger.
+
 ## Project Structure
 
 This project demonstrates a modular approach to building MCP tools:
