@@ -10,6 +10,13 @@ This MCP server uses the official TypeScript SDK -- https://github.com/modelcont
 
 - Node.js 23+ (or Bun/Deno/Anything that supports running .ts files)
 - Bun (for building executables)
+- ZBD API key for payment processing
+
+## ZBD Setup
+
+Get your API key from the ZBD Developer Dashboard and put it in a new `.env` file under `ZBD_API_KEY=XXXXXXXXXXXX` (check `.env.example` for an example).
+
+Once that's done run the `pnpm build` command and setup the MCP server on your client (e.g. Claude Desktop or Cursor).
 
 ## Installing Bun
 
@@ -59,13 +66,13 @@ This project demonstrates a modular approach to building MCP tools:
 
 - Each tool is defined in its own TypeScript file in the `src` directory
 - Each tool can be built into a standalone executable in the `bin` directory
-- The main `index.ts` provides a simple "Hello World" example
+- The main `index.ts` provides the actual tooling implementation
 
 ### Available Tools
 
-1. **ZBD** (`src/zbd.ts`): ZBD API for Bitcoin Lightning
+1. **ZBD** (`src/zbd.ts`): ZBD API for global Bitcoin Lightning payments
 
-## Creating Your Own Tool
+## Creating New Tool
 
 To create a new tool:
 

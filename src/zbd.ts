@@ -1,6 +1,10 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
+import dotenv from 'dotenv';
+
+// Load environment variables from .env file
+dotenv.config();
 
 // Create an MCP server instance
 const server = new McpServer({
@@ -20,7 +24,7 @@ async function zbdRequest(endpoint: string, options: {
       method: options.method,
       headers: {
         "Content-Type": "application/json",
-        "apikey": process.env.ZBD_API_KEY || "7JusHK7at5KpvQrNjkCel4JXmX6rHRpa"
+        "apikey": process.env.ZBD_API_KEY || "rHaRs3RASe1utLGzGhnGXE7M9lQhaiVP"
       },
       ...(options.body && { body: JSON.stringify(options.body) })
     });
