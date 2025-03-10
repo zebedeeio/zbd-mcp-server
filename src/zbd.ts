@@ -364,6 +364,53 @@ server.tool(
   })
 );
 
+// Add Batch Lightning Payment tool
+server.tool(
+  "send-batch-lightning-payments",
+  "Send multiple Bitcoin Lightning Network payments to Lightning Addresses in a single request",
+  {
+    payments: z.array(z.object({
+      lnAddress: z.string().describe("Lightning Address of the recipient (e.g. andre@zbd.gg)"),
+      amount: z.string().describe("Amount in millisatoshis"),
+      comment: z.string().optional().describe("Optional note or description"),
+      internalId: z.string().optional().describe("Optional metadata string")
+    })).max(10).describe("Array of payment requests (maximum 10)"),
+  },
+  async ({ payments }) => {
+    const results = [];
+    
+    for (const payment of payments) {
+      try {
+        const result = await zbdRequest("ln-address/send-payment", {
+          method: "POST",
+          body: payment
+        });
+        results.push({
+          lnAddress: payment.lnAddress,
+          status: "success",
+          ...result
+        });
+      } catch (error: any) {
+        results.push({
+          lnAddress: payment.lnAddress,
+          status: "failed",
+          error: error.message
+        });
+      }
+    }
+
+    return {
+      content: [{
+        type: "text" as const,
+        text: JSON.stringify({
+          totalPayments: payments.length,
+          results
+        }, null, 2)
+      }]
+    };
+  }
+);
+
 // Start the server using stdio transport
 async function main() {
   const transport = new StdioServerTransport();

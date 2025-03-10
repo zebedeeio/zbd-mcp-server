@@ -1,6 +1,10 @@
 # ZBD MCP Server
 
-https://github.com/modelcontextprotocol/typescript-sdk
+Add Bitcoin powers to your LLM.
+
+## Base SDK
+
+This MCP server uses the official TypeScript SDK -- https://github.com/modelcontextprotocol/typescript-sdk
 
 ## Prerequisites
 
