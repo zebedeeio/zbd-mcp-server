@@ -135,3 +135,32 @@ pnpm test:watch
 # Run tests with coverage
 pnpm test:coverage
 ```
+
+## ZBD.ts Tools Available
+
+The following tools are available in the ZBD MCP Server:
+
+1. `send-lightning-payment` - Send a Bitcoin Lightning Network payment to a Lightning Address using ZBD
+2. `send-gamertag-payment` - Send a Bitcoin payment to a ZBD Gamertag
+3. `create-gamertag-charge` - Generate a payment request for a ZBD User
+4. `validate-lightning-address` - Verify the validity of a Lightning Address
+5. `create-lightning-charge` - Generate a payment request for a Lightning Address
+6. `get-userid-by-gamertag` - Retrieve User ID from a ZBD Gamertag
+7. `get-gamertag-by-userid` - Retrieve ZBD Gamertag from a User ID
+8. `send-email-payment` - Send instant Bitcoin payments to any email
+9. `get-wallet-info` - Retrieve all data about a ZBD Project's Wallet
+10. `check-supported-region` - Verify if a user is coming from a supported region
+11. `get-zbd-ip-addresses` - Get the official IP addresses of ZBD servers
+12. `internal-transfer` - Performs a transfer of funds between two Projects
+13. `create-withdrawal-request` - Create a Bitcoin withdrawal QR code
+14. `get-withdrawal-request` - Retrieve all data about a single Withdrawal Request
+15. `send-payment` - Send a Bitcoin Lightning Network payment
+16. `get-payment` - Retrieve all data about a single Payment
+17. `decode-charge` - Understand the inner properties of a Charge QR code
+18. `create-charge` - Create a new Bitcoin Lightning Network charge
+19. `get-charge` - Retrieve all data about a single Charge
+20. `create-voucher` - Create a single-use ZBD Voucher that can be redeemed by any ZBD user
+21. `get-voucher` - Retrieve details about a ZBD Voucher
+22. `redeem-voucher` - Redeem a ZBD Voucher to credit your Project wallet
+23. `revoke-voucher` - Revoke a valid ZBD Voucher and reclaim the sats to your Project wallet
+24. `send-batch-lightning-payments` - Send multiple Bitcoin Lightning Network payments to Lightning Addresses in a single request
