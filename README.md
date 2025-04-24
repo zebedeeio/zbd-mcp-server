@@ -1,4 +1,16 @@
-# ZBD MCP Server
+# ⚠️ DEPRECATION NOTICE
+
+**🚨 This MCP Server is no longer maintained. 🚨**
+
+We’ve moved to a new and improved MCP Server implementation. All future updates, features, and support will be provided there.
+
+👉 Please migrate to the new MCP Server here: https://github.com/zebedeeio/zbd-payments-typescript-sdk/tree/main/packages/mcp-server
+
+This repo will remain available for reference, but is not recommended for production use.
+
+------------------------
+
+# ZBD MCP Server (deprecated -- use this instead: https://github.com/zebedeeio/zbd-payments-typescript-sdk/tree/main/packages/mcp-server)
 
 Add Bitcoin powers to your LLM.
 
